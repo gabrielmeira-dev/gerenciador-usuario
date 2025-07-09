@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, signal, computed, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UsersList } from './features/list/components/users-list/users-list';
+import { SearchInput } from './features/list/components/search-input/search-input';
+import { Users } from './shared/services/users';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  imports: [RouterOutlet]
 })
-export class App {
-  protected title = 'gerenciador-usuario';
+export class App  {
+ 
+
 }
