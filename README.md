@@ -2,7 +2,7 @@
 
 ## 📱 Sobre o Projeto
 
-Essa aplicação web tem o objetivo de fazer um gerenciamento de cadastros de usuários. O projeto foi desenvolvido utilizando o Angular, seguindo as melhores práticas de desenvolvimento.
+Essa aplicação web tem o objetivo de fazer um gerenciamento de cadastros de usuários. O projeto está sendo desenvolvido utilizando o Angular, seguindo as melhores práticas de desenvolvimento.
 
 ## 🚀 Tecnologias Utilizadas
 

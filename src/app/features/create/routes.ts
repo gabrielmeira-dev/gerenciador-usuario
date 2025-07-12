@@ -1,9 +1,10 @@
 import { Routes } from "@angular/router";
-import { List } from "./list";
+import { Create } from "./create";
+
 
 export const routes: Routes = [
     {
         path: '',
-        component: List
+        component: Create
     }
 ]

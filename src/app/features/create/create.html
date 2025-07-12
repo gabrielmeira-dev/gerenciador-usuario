@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" formControlName="name">
+
+    @if (form.controls.name.errors?.['required']) {
+        <div class="error-message">
+            Campo obrigatório
+        </div>  
+    }
+    
+
+    <button [disabled]="form.invalid">Criar Usuário</button>
+</form>

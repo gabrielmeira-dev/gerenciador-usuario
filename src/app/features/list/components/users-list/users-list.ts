@@ -1,4 +1,5 @@
 import { Component, input, output } from '@angular/core';
+import { User } from '../../../../shared/interfaces/user';
 
 
 @Component({
@@ -7,11 +8,11 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './users-list.scss'
 })
 export class UsersList {
-  users = input.required<string[]>();
+  users = input.required<User[]>();
 
-  removeUser = output<string>({alias: 'remove'})
+  removeUser = output<User>({alias: 'remove'});
 
-  remove(user: string){
-    this.removeUser.emit(user)
+  remove(user: User){
+    this.removeUser.emit(user);
   }
 }
