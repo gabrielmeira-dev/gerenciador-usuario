@@ -1,14 +1,12 @@
-import { Component, signal, computed, inject, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { UsersList } from './features/list/components/users-list/users-list';
-import { SearchInput } from './features/list/components/search-input/search-input';
-import { Users } from './shared/services/users';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [RouterOutlet]
+  imports: [RouterOutlet, MatToolbarModule]
 })
 export class App  {
  
