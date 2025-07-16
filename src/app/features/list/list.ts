@@ -6,22 +6,39 @@ import { User } from "../../shared/interfaces/user";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
 import { RouterLink } from "@angular/router";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
     selector: 'app-list',
     template: `
-    <div>
-    <a routerLink="/create">Criar Usuário</a>
+    <div class="actions-container">
+
+     <app-search-input  [(search)]="search"/>
+     <div class="button-action">
+        <a matButton="elevated" routerLink="/create">Criar Usuário</a>
+      </div>
+   
     </div>
    
-     <app-search-input  [(search)]="search"/>
       @if (isLoading()) {
           <div>Carregando.....</div>
       } @else {
           <app-users-list [users]="users()" (remove)="remove($event)"/>
       }
     `,
-    imports: [SearchInput, UsersList, RouterLink],
+     styles: [
+      `
+        .actions-container{
+            display: flex;
+            align-items: center;
+            
+            .button-action{
+              margin-left: auto;
+            }
+        }
+     `
+     ], 
+    imports: [SearchInput, UsersList, RouterLink, MatButtonModule],
 })
 
 export class List implements OnInit {

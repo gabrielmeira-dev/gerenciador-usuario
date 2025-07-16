@@ -1,8 +1,12 @@
-.card-content{
-    display: flex;
-    align-items: center;
+.card {
+    margin-bottom: 12px;
 
-    .action-button{
-        margin-left: auto;
+    .card-content{
+        display: flex;
+        align-items: center;
+    
+        .action-button{
+            margin-left: auto;
+        }
     }
 }

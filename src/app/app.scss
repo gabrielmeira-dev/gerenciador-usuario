@@ -6,4 +6,9 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+
+    .content-container {
+        width: 100%;
+        max-width: 600px;
+    }
 }
