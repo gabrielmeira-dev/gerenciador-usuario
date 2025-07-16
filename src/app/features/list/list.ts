@@ -10,34 +10,8 @@ import { MatButtonModule } from "@angular/material/button";
 
 @Component({
     selector: 'app-list',
-    template: `
-    <div class="actions-container">
-
-     <app-search-input  [(search)]="search"/>
-     <div class="button-action">
-        <a matButton="elevated" routerLink="/create">Criar Usuário</a>
-      </div>
-   
-    </div>
-   
-      @if (isLoading()) {
-          <div>Carregando.....</div>
-      } @else {
-          <app-users-list [users]="users()" (remove)="remove($event)"/>
-      }
-    `,
-     styles: [
-      `
-        .actions-container{
-            display: flex;
-            align-items: center;
-            
-            .button-action{
-              margin-left: auto;
-            }
-        }
-     `
-     ], 
+    templateUrl:  './list.html',
+     styleUrls: ['./list.scss'], 
     imports: [SearchInput, UsersList, RouterLink, MatButtonModule],
 })
 

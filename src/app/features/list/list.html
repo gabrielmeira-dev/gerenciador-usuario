@@ -1,0 +1,12 @@
+<div class="actions-container">
+  <app-search-input [(search)]="search" />
+  <div class="button-action">
+    <a matButton="elevated" routerLink="/create">Criar Usuário</a>
+  </div>
+</div>
+
+@if (isLoading()) {
+<div>Carregando.....</div>
+} @else {
+<app-users-list [users]="users()" (remove)="remove($event)" />
+}
