@@ -1,7 +1,10 @@
-<ul>
-    @for (user of users(); track user) {
-      <li>
-        {{user.name}} <button (click)="remove(user)">Remover</button>
-      </li>
-    }
-  </ul>
+  @for (user of users(); track user) {
+    <mat-card>
+      <mat-card-content class="card-content">
+       <span>{{user.name}}</span>  
+       <button class="action-button" matButton="filled" (click)="remove(user)">Remover</button>
+      </mat-card-content>
+    </mat-card>
+        
+  }
+
