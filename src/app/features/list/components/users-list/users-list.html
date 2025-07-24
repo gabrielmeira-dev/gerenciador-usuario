@@ -1,7 +1,7 @@
   @for (user of users(); track user) {
     <mat-card class="card">
       <mat-card-content class="card-content">
-       <span>{{user.name | titlecase}}</span>  
+       <span>{{user.name | titlecase | truncate}}</span>  
        <button class="action-button" appErrorBtn matButton="filled" (click)="remove(user)">Remover</button>
       </mat-card-content>
     </mat-card>
