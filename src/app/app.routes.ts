@@ -11,6 +11,10 @@ export const routes: Routes = [
         loadChildren: () => import('./features/create/routes').then((m) => m.routes)  
     },
     {
+        path: 'edit/:id',
+        loadChildren: () => import('./features/edit/routes').then((m) => m.routes)  
+    },
+    {
         path: '',
         redirectTo: 'list',
         pathMatch: 'full'

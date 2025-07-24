@@ -5,7 +5,7 @@ import { UsersList } from "./components/users-list/users-list";
 import { User } from "../../shared/interfaces/user";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 
 @Component({
@@ -16,8 +16,10 @@ import { MatButtonModule } from "@angular/material/button";
 })
 
 export class List implements OnInit {
+
   usersService = inject(Users);
   destroyRef = inject(DestroyRef);
+  router = inject(Router);
 
   search = signal('');
 
@@ -41,6 +43,10 @@ export class List implements OnInit {
       this.users.update(users => users.filter(u => u.id !== id));
     })
   }
+
+  edit(user: User) {
+   this.router.navigate(['/edit', user.id])
+    }
 
   private getUsers() {
     this.usersService.getAll(this.search()).pipe(takeUntilDestroyed(this.destroyRef), take(1)).subscribe((users) => {
