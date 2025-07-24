@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -10,6 +10,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { User } from '../../shared/interfaces/user';
 
 @Component({
   selector: 'app-edit',
@@ -25,11 +26,9 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class Edit implements OnInit {
   usersService = inject(Users);
-  activatedRoute = inject(ActivatedRoute);
-
-  user = signal(this.activatedRoute.snapshot.data['user']);
-
   router = inject(Router);
+
+  user = input.required<User>()
 
   form = new FormGroup({
     name: new FormControl('', {
