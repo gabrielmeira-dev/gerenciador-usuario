@@ -27,9 +27,7 @@ export class Edit implements OnInit {
   usersService = inject(Users);
   activatedRoute = inject(ActivatedRoute);
 
-  id = signal<string>(this.activatedRoute.snapshot.paramMap.get('id')!);
-
-  idAsNumber = computed(() => Number(this.id()));
+  user = signal(this.activatedRoute.snapshot.data['user']);
 
   router = inject(Router);
 
@@ -41,15 +39,13 @@ export class Edit implements OnInit {
   });
 
   ngOnInit() {
-    this.usersService.getById(this.idAsNumber()).subscribe((user) => {
-      this.form.controls.name.setValue(user.name);
-    });
+    this.form.controls.name.setValue(this.user().name);
   }
 
   submit() {
     const user = this.form.controls.name.value;
 
-    this.usersService.put(this.idAsNumber(),{ name: user }).subscribe(() => {
+    this.usersService.put(this.user().id,{ name: user }).subscribe(() => {
       this.router.navigateByUrl('/');
     });
   }
