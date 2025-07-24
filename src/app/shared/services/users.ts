@@ -8,7 +8,11 @@ import { User, UserPayload } from '../interfaces/user';
 })
 export class Users {
 
-  httpClient = inject(HttpClient)
+  httpClient = inject(HttpClient);
+
+  getById(id: number){
+    return this.httpClient.get<User>(`http://localhost:3000/users/${id}`)
+  }
 
   getAll(search?: string){
     let httpParams = new HttpParams();

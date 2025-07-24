@@ -1,1 +1,22 @@
-<p>edit works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+    <mat-form-field>
+      <mat-label>Nome do usuário</mat-label>
+      <input
+        matInput
+        placeholder="Ex: Gabriel"
+        required
+        type="text"
+        formControlName="name"
+      />
+      @if (form.controls.name.errors?.['required']) {
+      <mat-error>Campo obrigatório</mat-error>
+      }
+    </mat-form-field>
+  
+    <div class="actions-container">
+      <button type="button" matButton="elevated" routerLink="/" routerLinkActive="router-link-active" >Cancelar</button>
+      <button matButton="filled" [disabled]="form.invalid">Criar Usuário</button>
+    </div>
+  
+  </form>
+  
