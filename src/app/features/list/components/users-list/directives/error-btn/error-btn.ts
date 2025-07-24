@@ -8,7 +8,7 @@ export class ErrorBtn implements OnInit {
   hostEl = inject(ElementRef).nativeElement as HTMLElement;
 
   ngOnInit(){
-    this.hostEl.classList.add('error');
+    this.hostEl.classList.add('error-button');
   }
   constructor() { }
 
