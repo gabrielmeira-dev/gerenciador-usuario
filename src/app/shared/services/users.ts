@@ -30,6 +30,10 @@ export class Users {
     return this.httpClient.post<User[]>('http://localhost:3000/users', payload)
   }
 
+  put(id: number, payload: UserPayload){
+    return this.httpClient.put<User>(`http://localhost:3000/users/${id}`, payload)
+  }
+
   delete(id: number ){
     return this.httpClient.delete<{}>(`http://localhost:3000/users/${id}`)
   }

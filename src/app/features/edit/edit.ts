@@ -49,8 +49,8 @@ export class Edit implements OnInit {
   submit() {
     const user = this.form.controls.name.value;
 
-    this.usersService.post({ name: user }).subscribe(() => {
-      this.router.navigateByUrl('');
+    this.usersService.put(this.idAsNumber(),{ name: user }).subscribe(() => {
+      this.router.navigateByUrl('/');
     });
   }
 }
