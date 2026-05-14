@@ -1,8 +1,15 @@
 .actions-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  .button-action {
-    margin-left: auto;
+ 
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .button-action {
+      margin-bottom: 20px;
+    }
   }
 }
