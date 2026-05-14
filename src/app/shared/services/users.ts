@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { delay, of } from 'rxjs';
 import { User, UserPayload } from '../interfaces/user';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class Users {
   httpClient = inject(HttpClient);
 
   getById(id: number | string){
-    return this.httpClient.get<User>(`http://localhost:3000/users/${id}`)
+    return this.httpClient.get<User>(`${environment.apiUrl}/users/${id}`)
   }
 
   getAll(search?: string){
@@ -21,21 +21,21 @@ export class Users {
       httpParams = httpParams.append('q', search)
     }
 
-    return this.httpClient.get<User[]>('http://localhost:3000/users', {
+    return this.httpClient.get<User[]>(`${environment.apiUrl}/users`, {
       params: httpParams
     })
   }
 
   post(payload: UserPayload ){
-    return this.httpClient.post<User[]>('http://localhost:3000/users', payload)
+    return this.httpClient.post<User[]>(`${environment.apiUrl}/users`, payload)
   }
 
   put(id: number, payload: UserPayload){
-    return this.httpClient.put<User>(`http://localhost:3000/users/${id}`, payload)
+    return this.httpClient.put<User>(`${environment.apiUrl}/users/${id}`, payload)
   }
 
   delete(id: number ){
-    return this.httpClient.delete<{}>(`http://localhost:3000/users/${id}`)
+    return this.httpClient.delete<{}>(`${environment.apiUrl}/users/${id}`)
   }
 
 
