@@ -8,7 +8,7 @@
 
 ## 🎯 Contexto e Motivação
 
-O objetivo deste projeto não foi apenas implementar um CRUD funcional — foi construir uma aplicação que reflete como penso arquitetura frontend em projetos reais. Cada decisão técnica foi tomada com o mesmo critério que aplico em sistemas bancários de grande porte: **clareza, manutenibilidade e escalabilidade**.
+O objetivo deste projeto não foi apenas implementar um CRUD funcional, mas foi construir uma aplicação que reflete como penso arquitetura frontend em projetos reais. Cada decisão técnica foi tomada com o mesmo critério que aplico em sistemas bancários de grande porte: **clareza, manutenibilidade e escalabilidade**.
 
 ---
 
@@ -23,7 +23,7 @@ A separação entre componentes inteligentes e de apresentação foi aplicada em
 - **Páginas (`create`, `edit`, `list`)** — Smart components. Injetam serviços, orquestram estado e repassam dados para baixo via `input()`.
 - **`search-input` e `users-list`** — Dumb components. Recebem dados via `input()`, emitem eventos via `output()`, zero acoplamento com serviços ou estado global.
 
-O `list` é o Smart que gerencia o estado da busca: o `search-input` apenas emite o termo digitado, e o `list` aplica o filtro — responsabilidades bem delimitadas dentro da própria feature.
+O `list` é o Smart que gerencia o estado da busca: o `search-input` apenas emite o termo digitado, e o `list` aplica o filtro com responsabilidades bem delimitadas dentro da própria feature.
 
 ### Colocation — cada coisa vive onde é usada
 `TruncatePipe` e a diretiva `ErrorBtn` estão dentro da própria feature `list`, não no `shared/`. Isso aplica o princípio de **colocation**: só vai para `shared/` o que é genuinamente reutilizado em múltiplos lugares. O resultado é um `shared/` enxuto (interface `User` e serviço) e features autocontidas.
