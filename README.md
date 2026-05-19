@@ -138,8 +138,8 @@ Acesse em: `http://localhost:4200`
 ## 🔍 O que eu faria diferente
 
 - **Testes unitários**: A separação de responsabilidades deixa os dumb components e serviços prontos para teste — seria o próximo passo natural do projeto.
-- **Adicionar no sistema um feedback visual com snack bar ao cadastrar ou editar.
-- **Confirmação com dialog antes de remover um usuário.
+- Adicionar no sistema um feedback visual com snack bar ao cadastrar ou editar.
+- Confirmação com dialog antes de remover um usuário.
 
 ---
 
