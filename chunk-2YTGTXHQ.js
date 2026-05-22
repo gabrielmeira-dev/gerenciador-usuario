@@ -1,0 +1,1 @@
+import{b as r}from"./chunk-HZHLHHRZ.js";import{u as a,x as c}from"./chunk-M3JIQP6D.js";var o=class e{feedback=c(r);sucess(t){this.feedback.open(t,"OK",{panelClass:"snack-bar-sucess-feedback"})}constructor(){}static \u0275fac=function(s){return new(s||e)};static \u0275prov=a({token:e,factory:e.\u0275fac,providedIn:"root"})};export{o as a};
