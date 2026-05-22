@@ -5,6 +5,8 @@ import { Router, RouterLink } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { tap } from 'rxjs';
+import { feedbackService } from '../../shared/feedback/services/feedback';
 
 @Component({
   selector: 'app-create',
@@ -15,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class Create {
 
   usersService = inject(Users);
+  feedbackService = inject(feedbackService);
   router = inject(Router);
 
  form = new FormGroup({
@@ -24,8 +27,15 @@ export class Create {
  submit(){
     const user = this.form.controls.name.value;
 
-    this.usersService.post({name: user}).subscribe(() => {
-     this.router.navigateByUrl('')
-    })
+    this.usersService
+      .post({ name: user })
+      .pipe(
+        tap(() =>
+          this.feedbackService.sucess('Usuário cadastrado com sucesso!')
+        )
+      )
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
  }
 }

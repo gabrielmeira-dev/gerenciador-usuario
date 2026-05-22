@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../shared/interfaces/user';
+import { feedbackService } from '../../shared/feedback/services/feedback';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-edit',
@@ -26,6 +28,7 @@ import { User } from '../../shared/interfaces/user';
 })
 export class Edit implements OnInit {
   usersService = inject(Users);
+  feedbackService = inject(feedbackService);
   router = inject(Router);
 
   user = input.required<User>()
@@ -44,7 +47,11 @@ export class Edit implements OnInit {
   submit() {
     const user = this.form.controls.name.value;
 
-    this.usersService.put(this.user().id,{ name: user }).subscribe(() => {
+    this.usersService.put(this.user().id,{ name: user }).pipe(
+            tap(() =>
+              this.feedbackService.sucess('Usuário alterado com sucesso!')
+            )
+          ).subscribe(() => {
       this.router.navigateByUrl('/');
     });
   }
