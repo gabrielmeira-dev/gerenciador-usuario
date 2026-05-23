@@ -7,12 +7,14 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
 import { Router, RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
     selector: 'app-list',
     templateUrl:  './list.html',
      styleUrls: ['./list.scss'], 
-    imports: [SearchInput, UsersList, RouterLink, MatButtonModule],
+    imports: [SearchInput, UsersList, RouterLink, MatButtonModule, MatCardModule, MatProgressBarModule],
 })
 
 export class List implements OnInit {

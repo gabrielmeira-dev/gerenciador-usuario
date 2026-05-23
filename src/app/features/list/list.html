@@ -6,7 +6,11 @@
 </div>
 
 @if (isLoading()) {
-<div>Carregando.....</div>
+  <div class="loading">
+    <mat-card class="card">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card>
+  </div>
 } @else {
 <app-users-list [users]="users()" (remove)="remove($event)" (edit)="edit($event)" />
 }
