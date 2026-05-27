@@ -8,7 +8,7 @@
 
 ## 🎯 Contexto e Motivação
 
-O objetivo deste projeto não foi apenas implementar um CRUD funcional, mas foi construir uma aplicação que reflete como penso arquitetura frontend em projetos reais. Cada decisão técnica foi tomada com o mesmo critério que aplico em sistemas bancários de grande porte: **clareza, manutenibilidade e escalabilidade**.
+O objetivo deste projeto não foi apenas implementar um CRUD funcional, mas foi construir uma aplicação que reflete como penso arquitetura frontend em projetos reais. Cada decisão técnica foi tomada com o mesmo critério que aplico nas minhas experiências profissionais: **clareza, manutenibilidade e escalabilidade**.
 
 ---
 
