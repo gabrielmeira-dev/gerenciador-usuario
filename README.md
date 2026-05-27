@@ -8,7 +8,7 @@
 
 ## 🎯 Contexto e Motivação
 
-O objetivo deste projeto não foi apenas implementar um CRUD funcional, mas foi construir uma aplicação que reflete como penso arquitetura frontend em projetos reais. Cada decisão técnica foi tomada com o mesmo critério que aplico nas minhas experiências profissionais: **clareza, manutenibilidade e escalabilidade**.
+O objetivo deste projeto foi ir além de um CRUD funcional e colocar em prática conceitos de arquitetura frontend que venho estudando. Cada decisão técnica foi guiada por clareza, manutenibilidade e escalabilidade.
 
 ---
 
