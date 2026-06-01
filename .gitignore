@@ -43,3 +43,9 @@ Thumbs.db
 
 # DB Json
 db.json
+
+# Environments
+.env
+.env.*
+!.env.example
+src/environments/environment.prod.ts
