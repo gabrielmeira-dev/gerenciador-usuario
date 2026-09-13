@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: process.env['API_URL']
+    apiUrl: 'https://json-server-api-usuario.onrender.com'
   };
